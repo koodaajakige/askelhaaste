@@ -1,15 +1,17 @@
+@import '../../assets/styles/_config.scss'; 
+
 .item {
     display: flex;
-    border-bottom: 2px dotted #c9c1c1;
-    color: #666;
-    background-color: #FAFAFA;
+    border-bottom: 2px dotted $item-border;
+    color: $item-text;
+    background-color: $item-background;
 }
 
 .item_data {
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0.75rem;
+    padding: $item-padding;
 }
 
 .item_steps, .item_timespan {
@@ -18,7 +20,21 @@
 
 .item_name, .item_steps {
     font-weight: bold;
-    color: #000;
-    font-size: larger;
+    color: $item-text-strong;
+    font-size: 1.07rem;
     padding: 0.25rem;
+}
+
+.item_edit {
+    max-width: $item-edit-width;
+    min-width: $item-edit-width;
+    background-color: $item-edit-background;
+    color: $item-edit-text;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover .item_edit {
+    display: flex;
 }
