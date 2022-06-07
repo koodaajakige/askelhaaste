@@ -5,6 +5,12 @@
     border-bottom: 2px dotted $item-border;
     color: $item-text;
     background-color: $item-background;
+
+}
+
+.item:hover {
+    display: flex;
+    background-color: #e8e8e8;
 }
 
 .item_data {
@@ -28,8 +34,11 @@
 .item_edit {
     max-width: $item-edit-width;
     min-width: $item-edit-width;
-    background-color: $item-edit-background;
-    color: $item-edit-text;
+    //background-color: $item-edit-background;
+    //background-color: $header-background;
+    background-color:rgb(195, 197, 197);
+    color: #fff;
+    //color: $item-edit-text;
     display: none;
     justify-content: center;
     align-items: center;
