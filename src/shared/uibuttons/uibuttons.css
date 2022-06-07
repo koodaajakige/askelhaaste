@@ -18,3 +18,27 @@
 .uibutton:hover {
     opacity: 1;
 }
+
+.uibutton--primary {
+    background-color: #0285ee;
+    color: #fff;
+}
+
+.uibutton--primary:active {
+    background-color: #65b4ff;
+}
+
+.uibutton--secondary {
+    background-color: #facc2e;
+}
+
+.uibutton--secondary:active {
+    background-color: #f6dc87;
+    color: #fff;
+}
+
+.uibutton:disabled {
+    background-color: #ccc;
+    color: #999;
+    box-shadow: none;
+}

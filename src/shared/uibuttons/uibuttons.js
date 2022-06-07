@@ -1,8 +1,19 @@
 import './uibuttons.css';
 
-const Button = (props) => {
+const classNames = classnames => classnames.join(" ");
+
+const Button = ({ className = "", primary, secondary, ...props}) => {
     return (
-        <button type="button" className="uibutton" {...props} />
+        <button 
+          type="button" 
+          className={classNames([
+              "uibutton",
+              className,
+              primary ? "uibutton--primary" : "",
+              secondary ? "uibutton--secondary" : ""
+             ])}
+          {...props} 
+        />
     );
 }
 
