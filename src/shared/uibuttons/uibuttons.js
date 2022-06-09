@@ -17,4 +17,36 @@ const Button = ({ className = "", primary, secondary, ...props}) => {
     );
 }
 
-export { Button as default, Button }
+const FloatingButton = ({ className = "", ...props}) => {
+    return (
+        <Button
+          className={classNames([
+              "uibutton--floating",
+              className
+          ])}
+          {...props}
+          />
+    );
+}
+
+const ButtonContainer =({className = "", children, ...props}) => {
+    return(
+        <div
+          className={classNames(["uibutton__container", className])}
+          {...props}>
+            {children}
+        </div>
+    )
+}
+
+const ButtonAppContainer =({className = "", children, ...props}) => {
+    return(
+        <div
+          className={classNames(["uibutton__appcontainer", className])}
+          {...props}>
+            {children}
+        </div>
+    )
+}
+
+export { Button as default, Button, FloatingButton, ButtonContainer, ButtonAppContainer }

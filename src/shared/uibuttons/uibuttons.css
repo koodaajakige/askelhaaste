@@ -2,17 +2,23 @@
     background-color: rgb(195, 197, 197);
     color: #000;
     border: none;
+    outline: none;
     padding: 0.7em 1.5em;
     margin: 0.5em;
     border-radius: 0.8em;
     box-shadow: rgba(0,0,0,0.5) 0px 2px 2px;
     font-weight: bold;
     opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .uibutton:active {
     background-color: rgb(183, 187, 187);
     box-shadow: rgba(0,0,0,0.5) 0px 2px 4px;
+    color:rgb(236, 234, 234);
 }
 
 .uibutton:hover {
@@ -30,6 +36,7 @@
 
 .uibutton--secondary {
     background-color: #facc2e;
+    color: #fff;
 }
 
 .uibutton--secondary:active {
@@ -42,3 +49,24 @@
     color: #999;
     box-shadow: none;
 }
+
+.uibutton--floating {
+    position: fixed;
+    bottom: 3.5rem;
+    margin-right: -0.8em;
+    right: 50%;
+    border-radius: 50%;
+    font-size: 2.2em;
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0.5em;   
+}
+
+.uibutton__container {
+    position: relative;   
+}
+
+.uibutton__appcontainer > div {
+    transform: translateZ(10);
+}
+

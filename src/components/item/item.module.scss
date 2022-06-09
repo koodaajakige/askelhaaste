@@ -27,18 +27,14 @@
 .item_name, .item_steps {
     font-weight: bold;
     color: $item-text-strong;
-    font-size: 1.07rem;
     padding: 0.25rem;
 }
 
 .item_edit {
     max-width: $item-edit-width;
     min-width: $item-edit-width;
-    //background-color: $item-edit-background;
-    //background-color: $header-background;
     background-color:rgb(195, 197, 197);
     color: #fff;
-    //color: $item-edit-text;
     display: none;
     justify-content: center;
     align-items: center;
