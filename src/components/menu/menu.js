@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom';
 import styles from './menu.module.scss';
-import { MdViewList } from 'react-icons/md';
+import { MdHome } from 'react-icons/md';
 import { MdAreaChart } from 'react-icons/md';
 import { MdPersonAdd } from 'react-icons/md';
 
 function Menu() {
     return (
         <div className={styles.menu}>
-            <div><MdViewList /></div>
-            <div><MdAreaChart /></div>
-            <div><MdPersonAdd /></div>
+            <div><Link to="/"><MdHome /></Link></div>
+            <div><Link to="/stats"><MdAreaChart /></Link></div>
+            <div><Link to="/settings"><MdPersonAdd /></Link></div>
         </div>
     );
 }

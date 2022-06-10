@@ -67,6 +67,6 @@
 }
 
 .uibutton__appcontainer > div {
-    transform: translateZ(10);
+    transform: translateZ();
 }
 
