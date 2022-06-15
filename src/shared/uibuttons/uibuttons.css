@@ -51,15 +51,24 @@
 }
 
 .uibutton--floating {
+    background-color: #000;
     position: fixed;
     bottom: 3.5rem;
     margin-right: -0.8em;
     right: 50%;
     border-radius: 50%;
-    font-size: 2.2em;
+    font-size: 2em;
     width: 1.5em;
     height: 1.5em;
     padding: 0.5em;   
+}
+
+.uibutton--floating:hover {
+    background-color: rgb(76, 75, 75);
+}
+
+.uibutton--floating:active {
+    background-color: rgb(125, 122, 122); 
 }
 
 .uibutton__container {

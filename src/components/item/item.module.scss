@@ -20,9 +20,10 @@
     padding: $item-padding;
 }
 
-.item_steps, .item_timespan {
+.item_steps, .item_timespan, .item_average {
     text-align: right;
 }
+
 
 .item_name, .item_steps {
     font-weight: bold;
@@ -33,8 +34,9 @@
 .item_edit {
     max-width: $item-edit-width;
     min-width: $item-edit-width;
-    background-color:rgb(195, 197, 197);
+    background-color: rgb(195, 197, 197);
     color: #fff;
+    font-size: large;
     display: none;
     justify-content: center;
     align-items: center;
