@@ -1,6 +1,10 @@
 import styles from './item.module.scss';
-//import { MdOutlineArrowForwardIos } from 'react-icons/md';
 import { MdPlayArrow } from 'react-icons/md';
+import { FcLike } from "react-icons/fc";
+import { FcOk } from "react-icons/fc";
+import {FcHighPriority } from "react-icons/fc";
+import {FcBadDecision } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 function Item(props) {
 
@@ -21,18 +25,35 @@ function Item(props) {
     average = props.data.steps;
   }
 
+  let result;
+  if (average >= 10000) {
+    result = <FcLike />;
+  }
+
+  else if (average >= 7500) {
+    result = <FcOk />;
+  }
+
+  else if (average >= 5000) {
+    result = <FcBadDecision />;
+  }
+
+  else{
+    result = <FcHighPriority />;
+  }
+
   return(
     <div className={styles.item}>
       <div className={styles.item_data}>
           <div className={styles.item_name}>{props.data.name}</div>
           <div className={styles.item_steps}>{props.data.steps}</div>
           <div className={styles.item_date}>{today}</div>
-          <div className={styles.item_timespan}>{props.data.periodStart}-{props.data.periodEnd}</div>
-          <div></div>
+          <div className={styles.item_timespan}>{period}</div>
+          <div>{result}</div>
           <div className={styles.item_average}>{average?  average + " askelta/pv" : ""}</div>
       </div>
         <div className={styles.item_edit}>
-          <div><MdPlayArrow /></div>
+          <Link to={"/edit/"+props.data.id}><MdPlayArrow /></Link>
         </div>
       </div>
     );

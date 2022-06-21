@@ -2,7 +2,7 @@ const data = [
   {
     id:             "1",
     name:           "Kerttu",
-    steps:          28520,
+    steps:          30520,
     today:          "2020-11-19",
     periodStart:    "2020-10-16",
     periodEnd:      "2020-10-18",
@@ -11,7 +11,7 @@ const data = [
   {
     id:             "2",
     name:           "Arttu",
-    steps:          8530,
+    steps:          7500,
     today:          "2020-11-17",
     periodStart:    "",
     periodEnd:      "",
@@ -28,8 +28,8 @@ const data = [
   },
   {
     id:             "4",
-    name:           "Paula",
-    steps:          7500,
+    name:           "Pirkko",
+    steps:          4500,
     today:          "2020-10-16",
     periodStart:    "",
     periodEnd:      "",
@@ -44,6 +44,16 @@ const data = [
     periodEnd:      "2020-09-10",
     average:        7000,
   },
+  {
+    id:             "6",
+    name:           "Juuso",
+    steps:          5500,
+    today:          "2020-09-11",
+    periodStart:    "",
+    periodEnd:      "",
+    average:        7000,
+  },
+  
 ]; 
 
 export default data;

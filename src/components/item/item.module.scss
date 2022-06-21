@@ -24,6 +24,9 @@
     text-align: right;
 }
 
+.item_name {
+    font-size: 1.1rem;
+}
 
 .item_name, .item_steps {
     font-weight: bold;
@@ -42,6 +45,15 @@
     align-items: center;
 }
 
+.item_edit a {
+    color: $item-edit-text;
+}
+
 .item:hover .item_edit {
     display: flex;
+    
+}
+
+.item_average {
+    color: rgb(215, 91, 111);
 }

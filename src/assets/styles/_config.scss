@@ -1,3 +1,5 @@
+$container-padding: 2rem;
+
 $header-background: #facc2e;
 $header-text: #fff;
 $header-height: 4rem;
@@ -5,7 +7,7 @@ $header-fontsize: 1.8rem;
 
 $scollbar-track: #FAFAFA;
 $scrollbar-thumb: #c9c1c1;
-$scrollbar-width: 0.6rem;
+$scrollbar-width: 0.5rem;
 
 $item-border: #c9c1c1;
 $item-text: #666;
@@ -20,3 +22,10 @@ $menu-background: #A4A4A4;
 $menu-text: #fff;
 $menu-height: $header-height;
 
+$form-item-margin: 0.5rem 0.3rem;
+$form-input-border: #999;
+$form-input-radius: 0.3rem;
+$form-input-padding: 0.7rem;
+$form-input-fontsize: 1.1rem;
+$form-label-fontsize: 0.9rem;
+$form-label-margin-bottom: 0.4rem;
