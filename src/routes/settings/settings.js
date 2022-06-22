@@ -15,7 +15,7 @@ function Settings(props) {
             <h2>Asetukset</h2>
             <h3>Osallistujat</h3>
             <div className={styles.settings_types}>
-                {props.types.map((type) => <div key={type}>{type}</div>)}
+                {props.types.map((name) => <div key={name}>{name}</div>)}
                 <form onSubmit={handleNameSubmit}>
                     <div className={styles.typeform}>
                         <input type="text" name="name" />

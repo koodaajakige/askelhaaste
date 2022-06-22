@@ -11,7 +11,6 @@ import EditItem from '../../routes/edititem';
 import Menu from '../menu';
 import { ButtonAppContainer} from '../../shared/uibuttons';
 import testdata from '../../testdata.js';
-import item from '../item';
 
 function App() {
 
@@ -33,7 +32,7 @@ function App() {
     }
 
     storeddata.sort( (a,b) => {
-      const aDate =new Date(a.today);
+      const aDate = new Date(a.today);
       const bDate = new Date(b.today);
       return bDate.getTime() - aDate.getTime();   
     } );
@@ -64,7 +63,7 @@ function App() {
               <Items data={data} />
             </Route>
             <Route path="/stats">
-              <Stats />
+              <Stats data={data} />
             </Route>
             <Route path="/settings">
               <Settings types={namelist} onNameSubmit={handleNameSubmit}/>
