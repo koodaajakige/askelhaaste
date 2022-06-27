@@ -18,15 +18,15 @@ function Stats(props) {
     }
 
     const piedata = props.data.reduce(reducer, []);
-    const piecolors = randomColor({count: piedata.length, seed: "askelhaaste"});
+    const piecolors = randomColor({luminosity: 'bright', count: piedata.length, seed: "askelhaaste"});
 
     return (
         <div className={styles.stats}>
           <h2>Tilastot</h2>
-          <h3>Askeleet aikajanalla</h3>
+          <h3>Ryhmän aktiivisuus</h3>
 
           <ResponsiveContainer width={"100%"} height={360}>
-            <LineChart data={linedata} margin={{ top: 20, left: 20, right: 20, bottom: 20}} >
+            <LineChart data={linedata} margin={{ top: 20, left: 20, right: 20, bottom: 40}} >
               <CartesianGrid strokeDasharray= "3 3" />
               <XAxis  type="number" 
                       dataKey="date" 
@@ -48,7 +48,7 @@ function Stats(props) {
           <h3>Askeleet / osallistuja</h3>
           <ResponsiveContainer width={"100%"} height={360}>
             <PieChart>
-              <Pie data={piedata} dataKey="steps" nameKey="name">
+              <Pie data={piedata} dataKey="steps" nameKey="name" >
                 <LabelList dataKey="steps" position="inside" />
                 { piecolors.map(color => <Cell fill={color} key={color} />) }
               </Pie>

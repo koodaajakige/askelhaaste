@@ -2,11 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/app';
+//import Appwrapper from './components/appwrapper';
 import reportWebVitals from './reportWebVitals';
+import { FirebaseAppProvider } from 'reactfire';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyChOUHW3Ai9qBXoD8WYxDKNh_jO-TIxTYI",
+  authDomain: "askelhaaste.firebaseapp.com",
+  projectId: "askelhaaste",
+  storageBucket: "askelhaaste.appspot.com",
+  messagingSenderId: "599825350850",
+  appId: "1:599825350850:web:23ea14051913050e877b5b",
+  measurementId: "G-CYPT1G1KKY"
+};
 
 const root = document.getElementById('root');
 ReactDOM.render(
-  <App />, root
+  <FirebaseAppProvider firebaseConfig={firebaseConfig} >
+    <App />
+  </FirebaseAppProvider>, root
 );
 
 // If you want to start measuring performance in your app, pass a function

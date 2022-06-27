@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { useFirestore, useFirestoreCollectionData } from 'reactfire';
+import 'firebase/firestore';
 import styles from './app.module.scss';
 import Header from '../header';
 import Content from '../content';
@@ -17,12 +19,26 @@ function App() {
   const [data, setData] = useState([]);
   const [namelist, setNamelist] = useState([]);
 
+  const itemCollectionRef = useFirestore().collection('item');
+  const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("today", "desc"), {initialData: [], idField: "id"});
+
+  const nameCollectionRef = useFirestore().collection('name');
+  const { data: nameCollection } = useFirestoreCollectionData(nameCollectionRef.orderBy('name'), { initialData: []});
+
   useEffect(() => {
-    setData(testdata);
-    setNamelist(["Kerttu", "Arttu", "Ville", "Pirkko", "Valtteri", "Juuso"])
-  }, []);
+    setData(itemCollection);
+  }, [itemCollection]);
+
+  useEffect(() => {
+    const names = nameCollection.map(obj => obj.name);
+    setNamelist(names);
+  }, [nameCollection]);
 
   const handleItemSubmit = (newitem) => {
+
+    itemCollectionRef.doc(newitem.id).set(newitem);
+
+    /*
     let storeddata = data.slice();
     const index = storeddata.findIndex(item => item.id === newitem.id);
     if (index >= 0 ) {
@@ -38,19 +54,26 @@ function App() {
     } );
 
     setData(storeddata);
+    */
   }
 
   const handleItemDelete = (id) => {
+    itemCollectionRef.doc(id).delete();
+    /*
     let storeddata = data.slice();
     storeddata = storeddata.filter(item => item.id !== id);
     setData(storeddata);
+    */
   }
 
   const handleNameSubmit = (newname) => {
+    nameCollectionRef.doc().set({name: newname});
+    /*
     let storednamelist = namelist.slice();
     storednamelist.push(newname);
     storednamelist.sort();
     setNamelist(storednamelist);
+    */
   }
 
   return (
