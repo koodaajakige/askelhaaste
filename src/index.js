@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/app/app';
-//import Appwrapper from './components/appwrapper';
 import reportWebVitals from './reportWebVitals';
 import { FirebaseAppProvider } from 'reactfire';
+import Appwrapper from './components/appwrapper'; 
 
 const firebaseConfig = {
   apiKey: "AIzaSyChOUHW3Ai9qBXoD8WYxDKNh_jO-TIxTYI",
@@ -18,9 +17,10 @@ const firebaseConfig = {
 
 const root = document.getElementById('root');
 ReactDOM.render(
-  <FirebaseAppProvider firebaseConfig={firebaseConfig} >
-    <App />
-  </FirebaseAppProvider>, root
+  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
+    <Appwrapper />
+  </FirebaseAppProvider>
+  , root
 );
 
 // If you want to start measuring performance in your app, pass a function

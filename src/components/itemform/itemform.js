@@ -10,16 +10,16 @@ function ItemForm(props) {
 
   const submit = () => {
     let storedvalues = Object.assign({}, values);
-    storedvalues.amount = parseFloat(storedvalues.amount);
+    storedvalues.steps = parseFloat(storedvalues.steps);
     storedvalues.id = storedvalues.id ? storedvalues.id : uuidv4();
     props.onItemSubmit(storedvalues);
     history.push("/");
   }
 
   const initialState = props.data ? props.data : {
-    name: "",
+    name: props.types ? props.types[0] : "",
     steps: 0,
-    today: "",
+    today: new Date().toISOString().substring(0,10),
     periodStart: "",
     periodEnd:"" 
   };
@@ -45,7 +45,7 @@ function ItemForm(props) {
             <div className={styles.form_row}>
               <div>
                 <label htmlFor="name">Nimi</label>
-                <select name="name" onChange={handleChange} value={values.name} >
+                <select name="name" onChange={handleChange} value={values.name} required>
                     { props.types.map( (name) => <option key= {name} value={name}>{name}</option> ) }
                 </select>
               </div>
@@ -54,11 +54,11 @@ function ItemForm(props) {
             <div className={styles.form_row}>
               <div>
                 <label htmlFor="steps">Askeleet</label>
-                <input type="number" name="steps" step="10" onChange={handleChange} value={values.steps}/>
+                <input type="number" name="steps" step="10" onChange={handleChange} value={values.steps} required />
               </div>
               <div>
                 <label htmlFor="today">Tänään</label>
-                <input type="date" name="today" onChange={handleChange} value={values.today}/>
+                <input type="date" name="today" onChange={handleChange} value={values.today} required />
               </div>
             </div>
 
@@ -86,9 +86,7 @@ function ItemForm(props) {
               <div>
                 <Button primary onClick={handleDelete}>POISTA</Button>
               </div> : ""}
-
             </div>
-
           </div>
         </form>
     </div>

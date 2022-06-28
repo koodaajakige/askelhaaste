@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { useFirestore, useFirestoreCollectionData } from 'reactfire';
+import { useFirestore, useFirestoreCollectionData, useUser } from 'reactfire';
 import 'firebase/firestore';
+import 'firebase/auth';
 import styles from './app.module.scss';
 import Header from '../header';
 import Content from '../content';
@@ -12,17 +13,19 @@ import AddItem from '../../routes/additem';
 import EditItem from '../../routes/edititem';
 import Menu from '../menu';
 import { ButtonAppContainer} from '../../shared/uibuttons';
-import testdata from '../../testdata.js';
+//import testdata from '../../testdata.js';
 
 function App() {
 
   const [data, setData] = useState([]);
   const [namelist, setNamelist] = useState([]);
 
-  const itemCollectionRef = useFirestore().collection('item');
+  const user = useUser();
+
+  const itemCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('item');
   const { data: itemCollection } = useFirestoreCollectionData(itemCollectionRef.orderBy("today", "desc"), {initialData: [], idField: "id"});
 
-  const nameCollectionRef = useFirestore().collection('name');
+  const nameCollectionRef = useFirestore().collection('user').doc(user.data.uid).collection('name');
   const { data: nameCollection } = useFirestoreCollectionData(nameCollectionRef.orderBy('name'), { initialData: []});
 
   useEffect(() => {
@@ -30,8 +33,8 @@ function App() {
   }, [itemCollection]);
 
   useEffect(() => {
-    const names = nameCollection.map(obj => obj.name);
-    setNamelist(names);
+    const types = nameCollection.map(obj => obj.name);
+    setNamelist(types);
   }, [nameCollection]);
 
   const handleItemSubmit = (newitem) => {
