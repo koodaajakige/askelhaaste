@@ -6,7 +6,7 @@ function Header() {
         <div className={styles.header}>
             <div>Askelhaaste</div>
             <div><MdOutlineDirectionsWalk /></div>
-      </div>
+        </div>
     );
 }
 

@@ -7,7 +7,7 @@ function Stats (props) {
     const linedata = props.data.map(item => ({ date: new Date(item.today).getTime(), steps: item.steps }));
 
     const reducer = (groupedData, item) => {
-        const index = groupedData.findIndex( arrayItem => arrayItem.steps === item.steps );
+        const index = groupedData.findIndex( arrayItem => arrayItem.name === item.name );
         if (index >= 0) {
             groupedData[index].steps = groupedData[index].steps + item.steps;
         } else {
@@ -40,7 +40,7 @@ function Stats (props) {
                            style={{ textAnchor: "middle"}} />
                 </YAxis>
 
-                <Line dataKey="steps" name="yhteensä" unit=" askelta" />
+                <Line dataKey="steps" name="suoritus" unit=" askelta" />
                 <Tooltip labelFormatter={value => new Date(value).toLocaleDateString("fi-FI")} />
               </LineChart>
             </ResponsiveContainer>

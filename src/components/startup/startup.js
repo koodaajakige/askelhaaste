@@ -1,3 +1,4 @@
+import { MdOutlineDirectionsWalk } from 'react-icons/md';
 import uibuttons from '../../shared/uibuttons';
 import styles from './startup.module.scss';
 import Button from '../../shared/uibuttons';
@@ -14,14 +15,19 @@ function Startup (props) {
 
     return (
         <div className={styles.startup}>
-            <h1>Askelhaaste</h1>
-            <div>Tervetuloa käyttämään Askelhaaste -kuntoilusovellusta,
-                 johon voit kirjata päivittäiset askeleesi.
-                 Kirjaudu sisään Google-tunnuksillasi käyttääksesi sovellusta.
-            </div>
-            <Button onClick={signIn} secondary>Kirjaudu sisään</Button>
+          <div className={styles.header2}>
+            <div>Askelhaaste</div>
+            <div><MdOutlineDirectionsWalk /></div>
+          </div>
+            <div>Tervetuloa käyttämään Askelhaaste -kuntoilusovellusta.
+            <div>Kirjaa päivittäiset askeleesi ja haastaa ystäväsikin liikkumaan!</div>
+            <div>Kirjaudu sisään Google-tunnuksillasi.</div>
+          </div>
+          <div></div>
+          <Button onClick={signIn} secondary>Kirjaudu sisään</Button>
         </div>
     );
 }
 
 export default Startup;
+

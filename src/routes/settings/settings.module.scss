@@ -1,7 +1,7 @@
 @import '../../assets/styles/_config.scss';
 
 .settings {
-    padding: $container-padding;
+    padding: 1.5rem;
 }
 
 .settings h3 {
@@ -12,18 +12,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 30rem;
 }
 
 .settings_user {
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
 }
 
 .settings_user img {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
-    margin: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
 }
 
 .settings_types {
@@ -42,7 +45,9 @@
 
 .typeform {
     display: flex;
-    margin-top: 0.5rem;
+    margin-top: 3rem;
+    margin-right: 10rem;
+    
 }
 
 .typeform input {

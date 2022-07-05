@@ -1,5 +1,10 @@
+@import '../../assets/styles/_config.scss';
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap');
+
 .startup {
-    max-width: 38rem;
+    max-width: 20rem;
+    text-align: center;
+    font-weight: 500;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -8,7 +13,19 @@
     height: 100vh;
 }
 
-.startup div {
-    margin: 1rem;
-    
+.startup div { 
+    margin-bottom: 1rem;  
+}
+
+.header2 {
+    font-family: 'Averia Serif Libre', cursive;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #facc2e;
+    max-height: $header-height;
+    min-height: $header-height;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
