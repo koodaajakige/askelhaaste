@@ -1,6 +1,9 @@
 import styles from './additem.module.scss';
 import ItemForm from '../../components/itemform';
 
+//Uuden merkinnän lisääminen.
+//Palautetaan lomakesivu. 
+//Välitetään propsien kautta eteenpäin uuden suorituksen tiedot.
 function AddItem(props) {
     return (
       <div className={styles.additem}>

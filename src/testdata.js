@@ -1,3 +1,5 @@
+//Sovelluksen teossa apuna käytettävät testitulosteet. Näiden avulla testataan, että tieto eli data
+//muotoutuu, välittyy ja tulostuu sovelluksessa oikein. Testidatan tietoja ei käytetä valmiissa sovelluksessa.
 const data = [
   {
     id:             "1",
@@ -6,7 +8,7 @@ const data = [
     today:          "2022-05-31",
     periodStart:    "2022-05-29",
     periodEnd:      "2022-05-30",
-    average:        7000,
+    average:        9150,
   },
   {
     id:             "2",
@@ -15,7 +17,7 @@ const data = [
     today:          "2022-05-30",
     periodStart:    "",
     periodEnd:      "",
-    average:        7000,
+    average:        7500,
   },
   {
     id:             "3",
@@ -24,7 +26,7 @@ const data = [
     today:          "2022-05-29",
     periodStart:    "2022-05-28",
     periodEnd:      "2022-05-28",
-    average:        7000,
+    average:        14800,
   },
   {
     id:             "4",
@@ -33,7 +35,7 @@ const data = [
     today:          "2022-05-16",
     periodStart:    "",
     periodEnd:      "",
-    average:        7000,
+    average:        4500,
   },
   {
     id:             "5",
@@ -42,7 +44,7 @@ const data = [
     today:          "2022-05-11",
     periodStart:    "2022-05-11",
     periodEnd:      "2022-05-10",
-    average:        7000,
+    average:        11280,
   },
   {
     id:             "6",
@@ -51,7 +53,7 @@ const data = [
     today:          "2022-05-08",
     periodStart:    "",
     periodEnd:      "",
-    average:        7000,
+    average:        5500,
   },
   
 ]; 

@@ -1,7 +1,12 @@
 import './uibuttons.css';
 
+//Komponenttikirjasto käyttöliittymän napeille.
+
+//Apufunktio, joka saa parametrina taulukon, jonka alkiot se yhdistää välilyönnillä.
+//Nappikomponentti ymmärtää apufunktion johdosta kaksi esimääriteltyä määritettä.
 const classNames = classnames => classnames.join(" ");
 
+//Perusnappi, jolle määritelty myös primary ja secondary -toiminnallisuudet.
 const Button = ({ className = "", primary, secondary, ...props}) => {
     return (
         <button 
@@ -17,6 +22,8 @@ const Button = ({ className = "", primary, secondary, ...props}) => {
     );
 }
 
+//Kelluva toimintanappi, sovelluksessa käytetään uuden merkinnän lisäämiseen.
+//Perusnapin toiminnallisuutta laajennettu kelluvalla ominaisuudella.
 const FloatingButton = ({ className = "", ...props}) => {
     return (
         <Button
@@ -29,6 +36,9 @@ const FloatingButton = ({ className = "", ...props}) => {
     );
 }
 
+//Apukomponentit ButtonContainer ja ButtonAppContainer, joiden avulla nappi saadaan sijoittumaan sivulle oikein.
+
+//Apukomponentti, joka käärii koko sivun.
 const ButtonContainer =({className = "", children, ...props}) => {
     return(
         <div
@@ -39,6 +49,7 @@ const ButtonContainer =({className = "", children, ...props}) => {
     )
 }
 
+//Apukomponentti, joka käärii koko sovelluksen.
 const ButtonAppContainer =({className = "", children, ...props}) => {
     return(
         <div

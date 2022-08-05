@@ -4,6 +4,8 @@ import { MdHome } from 'react-icons/md';
 import { MdAreaChart } from 'react-icons/md';
 import { MdPersonAdd } from 'react-icons/md';
 
+//Käyttöliittymän alareunan menu-valikko, navigointilinkit 
+//Koti, Tilastot ja Asetukset -sivuille.
 function Menu() {
     return (
         <div className={styles.menu}>

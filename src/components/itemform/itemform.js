@@ -4,10 +4,18 @@ import useForm from '../../shared/useform';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
+//Suoritusmerkinnän käsittelylomake: uuden merkinnän lisääminen
+//tai vanhan merkinnän muokkaaminen.
 function ItemForm(props) {
-
+  //Muodostetaan useHistory()-koukku, istunnon selainhistorian työkalu.
   const history = useHistory();
 
+  //Määritetään mitä tapahtuu lomakkeen lähetysvaiheessa. 
+  //Otetaan kopio oliosta, mikä on tallennettu lomakkeella values-muuttujiin. 
+  //Muokataan askelien arvo tekstimuodosta luvuksi.
+  //Määritetään tiedolle id-arvo.
+  //Kutsutaan onItemSubmit-toiminnallisuutta, tallennetaan tieto.
+  //Navigointi takaisin pää- eli aloitussivulle history-hooksin avulla.
   const submit = () => {
     let storedvalues = Object.assign({}, values);
     storedvalues.steps = parseFloat(storedvalues.steps);
@@ -16,6 +24,11 @@ function ItemForm(props) {
     history.push("/");
   }
 
+  //Asetetaan alkutilanne lomakkeen merkinnöille.
+  //Osallistujalistasta oletukseksi 1. alkio osallistujista.
+  //Askelten määrä on lähtökohtaisesti 0.
+  //Kirjauspäivälle asetetaan oletukseksi kyseinen tämä päivä.
+  //Suorituskauden alku- ja loppupäivät tyhjiksi kentiksi. Voidaan jättää merkitsemättä.
   const initialState = props.data ? props.data : {
     name: props.types ? props.types[0] : "",
     steps: 0,
@@ -24,19 +37,29 @@ function ItemForm(props) {
     periodEnd:"" 
   };
 
+  //Hooksien käyttö lomakkeen käsittelyyn. 
   const {values, handleChange, handleSubmit} = useForm(submit, initialState, false);
 
+  //Paluu ja navigointi selainhistoriassa edelliselle sivulle.
   const handleCancel = (event) => {
     event.preventDefault();
     history.goBack();
   }
 
+  //Merkinnän poisto. Käsittelijä, jolta poistetaan oletustoiminto.
+  //Välitetään poistettavan tiedon id.
+  //Navigointi takaisin pää- eli aloitussivulle historyn avulla.
   const handleDelete =(event) => {
     event.preventDefault();
     props.onItemDelete(values.id);
     history.push("/");
   }
 
+  //Lomakkeella kirjattujen tietojen tallennus/lisäys tilanteen mukaan.
+  //Required -määritelmä niillä kentillä, mihin vaaditaan kirjaus eli ei voida jättää tyhjäksi.
+  //Askelten määrän porrasväli nuolivalitsijasta 10 askelta kerrallaan.
+  //Napit: peruuta (palaataan alkusivulle), tallenna/lisää (riippuen onko lomakesivuksi valittu 
+  //suorituksen muokkaus/lisäys) ja poista (poistaa merkinnän alkusivulta).
   return (
     <div>
         <form onSubmit={handleSubmit}>

@@ -6,11 +6,17 @@ import {FcHighPriority } from "react-icons/fc";
 import {FcBadDecision } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
+//Komponentti tulostaa yksittäisen merkinnän tiedot, linkki merkinnän muokkaukseen.
 function Item(props) {
 
+  //Määritetään Suomen aikavyöhyke.
   const locale = "fi-Fi";
+  //Määritetään suorituksen kirjauksen oletuspäivä, tämä päivä (=today).
   const today = new Date(props.data.today).toLocaleDateString(locale);
 
+  //Selvitetään aikavälillä (=period), keskimäärin kuljetut askeleet/pv (=average).
+  //Määritetään suorituksen alku- ja loppupäivämäärät (=periodStart ja periodEnd).
+  //Lasketaan suoritusaikavälin päivien lukumäärä (=days).
   let average;
   let period;
   if (props.data.periodStart && props.data.periodEnd) {
@@ -21,10 +27,17 @@ function Item(props) {
     average = parseInt(props.data.steps / days);
   }
 
+  //Mikäli suorituksen alku- ja loppupäivämääriä ei ole määritelty, suorituksen askeleet ovat 
+  //yhdeltä päivältä eli keskimäärin kuljetut askeleet/pv = suorituksen askelmäärä.
   else{
     average = props.data.steps;
   }
-
+  
+  //Määritetään keskimääräisen päiväkohtaisen askelsuorituksen oikeuttama "tsemppikuvake":
+  //10 000 askelta ja yli /pv = punainen sydän (optimi liikuntasuoritus),
+  //7 500 askelta ja yli / pv = vihreä ok (liikuntaa on riittävästi),
+  //5 000 askelta ja yli / pv = keltainen varoitus (pitäisi liikkua hieman enemmän),
+  //alle 5000 askelta / pv = punainen !-hälytys (aivan liian vähän liikuntaa päivän aikana).
   let result;
   if (average >= 10000) {
     result = <FcLike />;
@@ -42,6 +55,8 @@ function Item(props) {
     result = <FcHighPriority />;
   }
 
+  //Palautetaan tulostuksena yksittäisen suorituksen tiedot.
+  //Linkki nuolikuvakkeesta suorituksen muokkaukseen.
   return(
     <div className={styles.item}>
       <div className={styles.item_data}>

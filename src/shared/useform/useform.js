@@ -31,8 +31,8 @@ const useForm = (callback, initialState={}, resetOnSubmit=true) => {
         setValues(initialState);
     }
 
-    //Palauta luonnin yhteydessä sekä käsittelijät että
-    //state-muuttuja.
+    //Palauttaa luonnin yhteydessä sekä käsittelijät että
+    //state-muuttujan.
     return {
       handleSubmit,
       handleChange,

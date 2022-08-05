@@ -5,12 +5,17 @@ import Button from '../../shared/uibuttons';
 import firebase from 'firebase/app';
 import { useAuth } from 'reactfire';
 
+//Sivu, joka aukeaa ensimmäiseksi käyttäjälle tämän käynnistäessä sovelluksen.
+//Sivulla esitellään lyhyesti sovellus, jolle voidaan kirjautua Google-tunnuksilla.
 function Startup (props) {
 
+    //Käyttäjäoikeuksien todennus Reactin useAuth -Hooksin avulla.
     const auth = useAuth();
 
+    //Kirjautuminen Google-tunnuksilla, popup-kirjautumissivu avautuu käyttäjän 
+    //käyttäjätunnuksen ja salasanan kirjaamista varten.
     const signIn = async () => {
-        await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
     }
 
     return (

@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { FirebaseAppProvider } from 'reactfire';
 import Appwrapper from './components/appwrapper'; 
 
+
+//Kytketään  sovellus Firebasen Firestore-palveluun, joka mahdollistaa reaaliaikaisen tietojen tallennuksen ja synkronoinnin.
 const firebaseConfig = {
   apiKey: "AIzaSyChOUHW3Ai9qBXoD8WYxDKNh_jO-TIxTYI",
   authDomain: "askelhaaste.firebaseapp.com",
@@ -15,6 +17,9 @@ const firebaseConfig = {
   measurementId: "G-CYPT1G1KKY"
 };
 
+//Appwrapper -komponentin kutsu, tarkoituksena on huolehtia siitä, että käyttäjä ohjataan
+//joko sovelluksen etusivulle (App), jos käyttäjä on kirjautunut, muuten hänet 
+//ohjataan kirjautumissivulle (Startup).
 const root = document.getElementById('root');
 ReactDOM.render(
   <FirebaseAppProvider firebaseConfig={firebaseConfig}>
