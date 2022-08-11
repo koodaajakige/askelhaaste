@@ -57,7 +57,8 @@ function ItemForm(props) {
 
   //Lomakkeella kirjattujen tietojen tallennus/lisäys tilanteen mukaan.
   //Required -määritelmä niillä kentillä, mihin vaaditaan kirjaus eli ei voida jättää tyhjäksi.
-  //Askelten määrän porrasväli nuolivalitsijasta 10 askelta kerrallaan.
+  //Kirjattujen askelten määrän on oltava positiivinen luku ja askeleet tulee ilmoittaa 10 askeleen tarkkuudella.
+  //Sovellus ei hyväksy siis negatiivisia, 1-9 tarkkuuden yksittäisiä lukuja eikä desimaalilukuja.
   //Napit: peruuta (palaataan alkusivulle), tallenna/lisää (riippuen onko lomakesivuksi valittu 
   //suorituksen muokkaus/lisäys) ja poista (poistaa merkinnän alkusivulta).
   return (
@@ -77,7 +78,7 @@ function ItemForm(props) {
             <div className={styles.form_row}>
               <div>
                 <label htmlFor="steps">Askeleet</label>
-                <input type="number" name="steps" step="10" onChange={handleChange} value={values.steps} required />
+                <input type="number" name="steps" min="0" step="10" onChange={handleChange} value={values.steps} required />
               </div>
               <div>
                 <label htmlFor="today">Tänään</label>

@@ -1,5 +1,5 @@
 import { MdOutlineDirectionsWalk } from 'react-icons/md';
-import uibuttons from '../../shared/uibuttons';
+//import uibuttons from '../../shared/uibuttons';
 import styles from './startup.module.scss';
 import Button from '../../shared/uibuttons';
 import firebase from 'firebase/app';
@@ -25,7 +25,7 @@ function Startup (props) {
             <div><MdOutlineDirectionsWalk /></div>
           </div>
             <div>Tervetuloa käyttämään Askelhaaste -kuntoilusovellusta.
-            <div>Kirjaa päivittäiset askeleesi ja haastaa ystäväsikin liikkumaan!</div>
+            <div>Kirjaa päivittäiset askeleesi ja haasta ystäväsikin liikkumaan!</div>
             <div>Kirjaudu sisään Google-tunnuksillasi.</div>
           </div>
           <div></div>
