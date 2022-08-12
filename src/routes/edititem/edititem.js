@@ -11,7 +11,7 @@ function EditItem(props) {
 
     //Noudetaan muokattavan merkinnän id-parametri.
     const { id } = useParams();
-    ////Noudetaan muokattavan merkinnän id:tä vastaava indeksi.
+    //Noudetaan muokattavan merkinnän id:tä vastaava indeksi.
     const index = props.data.findIndex(item => item.id === id);
     //Haetaan yksittäinen merkintä taulukosta.
     let item = props.data[index];
