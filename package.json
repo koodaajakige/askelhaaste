@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "firebase": "^8.2.4",
+    "firebase": "^8.10.1",
     "node-sass": "^7.0.3",
     "randomcolor": "^0.6.2",
     "react": "^17.0.2",
