@@ -1,3 +1,15 @@
+# Askelhaaaste -sovellus
+Askelhaaste on Reactilla toteutettu sovellus, jonka avulla esim. työporukka voi 
+haastaa toisensa liikkumaan. 
+Kukin osallistuja kirjaa sovellukseen päivässä/aikavälillä kulkemansa askeleeet ja
+sovellus laskee ja vertailee erilaisin diagrammein saavutetut liikuntasuoritukset.
+
+React -sovellus on Saskyn Tieto- ja viestintätekniikan perustutkinnon FrontEnd -osan näyttötyö.
+Työ on tallennettu Firebase -pilvipalveluun.
+
+Appia voi kokeilla osoitteessa:
+https://askelhaaste.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
